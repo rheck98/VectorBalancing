@@ -294,7 +294,6 @@ def get_inner_outer(x=x, f_x=f_x, dx=dx, plot_all = False):
 
     return x, over, under
 
-#get_inner_outer(plot_all=True)
 
 def iterate_inner_outer(x=x, f_x=f_x, dx=dx, n_steps=30, plot_all=False):
     zero_idx = np.argmin(np.abs(x))
@@ -339,9 +338,14 @@ def iterate_inner_outer(x=x, f_x=f_x, dx=dx, n_steps=30, plot_all=False):
     return x, upper_history, lower_history
 
 
+
+
+# The following code runs the iterations for the specified number of steps!
+
+
 # Run iterations
 x, upper_history, lower_history = iterate_inner_outer(
-    x, f_x, dx, n_steps=25
+    x, f_x, dx, n_steps=n_steps
 )
 
 # Plot upper iterations
@@ -373,8 +377,3 @@ plt.show()
 
 
 
-
-
-'''
-In the following code I will debug the previous code--what we know for sure is that far from the corner, the two points should be the same!
-'''
